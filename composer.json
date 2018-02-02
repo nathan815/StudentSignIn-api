@@ -1,0 +1,11 @@
+{
+    "name": "nathan/student-sign-in-api",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Nathaniel Johnson",
+            "email": "nathancj224@gmail.com"
+        }
+    ],
+    "require": {}
+}
