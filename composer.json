@@ -7,5 +7,7 @@
             "email": "nathancj224@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "slim/slim": "^3.0"
+    }
 }
