@@ -3,19 +3,18 @@
  * Main Application Configuration
  */
 
-return [
-    'displayErrorDetails' => true, // set to false in production
-    'addContentLengthHeader' => false, // Allow the web server to send the content-length header
-    // Renderer settings
-    'renderer' => [
-        'template_path' => __DIR__ . '/../templates/',
-    ],
+$config['appName'] = env('APP_NAME', 'App');
+$config['displayErrorDetails'] = env('DISPLAY_ERROR_DETAILS', true);
+$config['addContentLengthHeader'] = false;
 
-    // Monolog settings
-    'logger' => [
-        'name' => 'slim-app',
-        'path' => isset($_ENV['docker']) ? 'php://stdout' : __DIR__ . '/../logs/app.log',
-        'level' => \Monolog\Logger::DEBUG,
-    ]
+$config['renderer'] = [
+    'template_path' => __DIR__ . '/../templates/',
 ];
 
+$config['logger'] = [
+    'name' => $config['appName'],
+    'path' => isset($_ENV['docker']) ? 'php://stdout' : __DIR__ . '/../logs/app.log',
+    'level' => \Monolog\Logger::DEBUG,
+];
+
+//git commit -m "Created files for dependencies, middleware, settings, and routes and included them in index.php. "
