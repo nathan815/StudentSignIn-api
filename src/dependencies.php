@@ -15,10 +15,11 @@ $container['logger'] = function($c) {
 $container['db'] = function ($c) {
     $db = $c['settings']['db'];
     try {
-        $conn = "{$db['engine']}:host={$db['host']};dbname={$db['database']};charset={$db['charset']}";
+        $conn = "{$db['driver']}:host={$db['host']};dbname={$db['database']};charset={$db['charset']}";
         $pdo = new PDO($conn, $db['username'], $db['password'], $db['pdo_options']);
         return $pdo;
     } catch(PDOException $e) {
-        echo 'PDO Error: '.$e;
+        $c->logger->error($e);
+        throw new PDOException($e);
     }
 };

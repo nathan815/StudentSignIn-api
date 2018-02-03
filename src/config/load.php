@@ -5,12 +5,12 @@
 require __DIR__ . '/../helpers/env_helper.php';
 
 // Set up dotenv if ENVIRONMENT is not production
-if(env('ENVIRONMENT') != 'production') {
+if(env('APP_ENV') != 'production') {
     try {
         $dotenv = new Dotenv\Dotenv(__DIR__ . '/../../');
         $dotenv->load();
     } catch(Dotenv\Exception\InvalidPathException $e) {
-        die('Error: .env file not found');
+        die("<pre>$e</pre>");
     }
 }
 

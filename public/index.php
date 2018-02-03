@@ -8,8 +8,8 @@ $config = require __DIR__ . '/../src/config/load.php';
 $app = new \Slim\App(['settings' => $config]);
 $app->getContainer()['config'] = $config;
 
-require __DIR__ . '/../src/config/dependencies.php';
-require __DIR__ . '/../src/config/middleware.php';
-require __DIR__ . '/../src/config/routes.php';
+require __DIR__ . '/../src/dependencies.php';
+require __DIR__ . '/../src/middleware.php';
+require __DIR__ . '/../src/routes.php';
 
 $app->run();
