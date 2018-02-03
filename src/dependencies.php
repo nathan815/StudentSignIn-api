@@ -3,8 +3,11 @@
  * Application Dependencies
  */
 
+use \StudentSignIn\Controllers;
+
 $container = $app->getContainer();
 
+// Register dependencies
 $container['logger'] = function($c) {
     $logger = new \Monolog\Logger($c['settings']['logger']['name']);
     $file_handler = new \Monolog\Handler\StreamHandler($c['settings']['logger']['path']);
@@ -22,4 +25,11 @@ $container['db'] = function ($c) {
         $c->logger->error($e);
         throw new PDOException($e);
     }
+};
+
+// Register controllers with their dependencies
+
+$container[Controllers\HelloController::class] = function($c) {
+    $db = $c->get('db');
+    return new Controllers\HelloController($db);
 };
