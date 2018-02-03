@@ -12,7 +12,7 @@ $config['renderer'] = [
 ];
 
 $config['logger'] = [
-    'name' => $config['appName'],
-    'path' => env('docker') ? 'php://stdout' : __DIR__ . '/../../' . env('APP_LOG_FILE', 'logs/app.log'),
-    'level' => \Monolog\Logger::DEBUG,
+    'name'  => $config['appName'],
+    'path'  => env('docker') ? 'php://stdout' : __DIR__ . '/../../' . env('APP_LOG_FILE', 'logs/app.log'),
+    'level' => env('APP_LOG_LEVEL', \Monolog\Logger::DEBUG)
 ];
