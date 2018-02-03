@@ -1,6 +1,6 @@
-# Classroom Student Sign In - API
-An application that allows students to sign in with their phone, and teachers/professors to view who signed in daily.
+# Student Sign In - Backend Web API
+An application built with React Native that allows students to sign in with their phone, and professors to see student sign in data.
 
-The application verifies that the student is in class with bluetooth.
+Bluetooth is used to ensure the student is actually in the classroom.
 
-This is the backend Web API for the application (built with React Native).
+App: [StudentSignIn-app](https://github.com/nathan815/StudentSignIn-app)
