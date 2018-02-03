@@ -13,8 +13,6 @@ $config['renderer'] = [
 
 $config['logger'] = [
     'name' => $config['appName'],
-    'path' => isset($_ENV['docker']) ? 'php://stdout' : __DIR__ . '/../logs/app.log',
+    'path' => env('docker') ? 'php://stdout' : __DIR__ . '/../../' . env('APP_LOG_FILE', 'logs/app.log'),
     'level' => \Monolog\Logger::DEBUG,
 ];
-
-//git commit -m "Created files for dependencies, middleware, settings, and routes and included them in index.php. "

@@ -19,5 +19,6 @@ $config = [];
 
 // Require each config file
 require __DIR__ . '/application.php';
+require __DIR__ . '/database.php';
 
 return $config;
